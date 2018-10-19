@@ -11,10 +11,10 @@ namespace LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            FeatureCollection list = ConvertJson();
+            List<Feature> list = GetListOfFeatures();
         }
 
-        static FeatureCollection ConvertJson()
+        static List<Feature> GetListOfFeatures()
         {
             string path = "../../../data.json";
             string text = "";
@@ -25,10 +25,9 @@ namespace LINQ
                 text = sr.ReadToEnd();
             }
 
-            //deserialize JSON and convert to FeatureCollection of features
+            //deserialize JSON and convert to FeatureCollection
             FeatureCollection featureCollection = JsonConvert.DeserializeObject<FeatureCollection>(text);
-            Console.WriteLine("deserialized");
-            return featureCollection;
+            return featureCollection.Features;
         }
     }
 }

@@ -6,6 +6,6 @@ namespace LINQ.Classes
 {
     public class Property
     {
-        public string neighborhood { get; set; }
+        public string Neighborhood { get; set; }
     }
 }

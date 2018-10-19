@@ -6,6 +6,6 @@ namespace LINQ.Classes
 {
     public class FeatureCollection
     {
-        public List<Feature> features { get; set; }
+        public List<Feature> Features { get; set; }
     }
 }
