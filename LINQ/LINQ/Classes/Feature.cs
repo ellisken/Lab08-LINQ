@@ -8,6 +8,6 @@ namespace LINQ.Classes
     public class Feature
     {
         [JsonProperty("Properties")]
-        public Property properties { get; set; }
+        public Property Properties { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using LINQ.Classes;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace LINQ
 {
@@ -11,9 +12,18 @@ namespace LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            List<Feature> list = GetListOfFeatures();
+            IEnumerable<Feature> list = GetListOfFeatures();
+
+            //Query #1 - Get all neighborhoods
+            var allHoods = list.Select(x => x.Properties.Neighborhood);
+
+
         }
 
+        /// <summary>
+        /// Returns a list of Feature objects from data.json
+        /// </summary>
+        /// <returns>List of features</returns>
         static List<Feature> GetListOfFeatures()
         {
             string path = "../../../data.json";
